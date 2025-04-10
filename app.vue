@@ -18,35 +18,6 @@
   </div>
 </template>
 
-<style scoped lang="sass">
-.container
-  @apply w-9/12 m-auto py-3 flex flex-col gap-4
-
-.main
-  @apply bg-blue-100;
-  .search-container
-    @apply flex justify-center
-    .search
-      @apply bg-white flex rounded-xl
-      &-input
-        @apply p-2 rounded-r-xl
-        &[type="search"]
-          @apply outline-offset-0
-        &:focus-visible
-          @apply outline-blue-600
-      &-icon
-        @apply p-2
-  .posts
-    @apply xl:columns-3 gap-4
-    .post
-      @apply flex flex-col bg-white rounded-xl p-3 gap-4 mb-4 break-inside-avoid
-      .title,.description,.author
-        @apply capitalize
-      .title
-        @apply font-bold text-xl text-blue-600
-      .author
-        @apply opacity-50 font-medium
-</style>
 
 <script lang="ts" setup>
 import { ref, onMounted, computed } from 'vue';
@@ -90,3 +61,33 @@ onMounted(async () => {
   users.value = await GetUsers() as User[];
 });
 </script>
+
+<style scoped lang="sass">
+.container
+  @apply w-9/12 m-auto py-3 flex flex-col gap-4
+
+.main
+  @apply bg-blue-100;
+  .search-container
+    @apply flex justify-center
+    .search
+      @apply bg-white flex rounded-xl
+      &-input
+        @apply p-2 rounded-r-xl
+        &[type="search"]
+          @apply outline-offset-0
+        &:focus-visible
+          @apply outline-blue-600
+      &-icon
+        @apply p-2
+  .posts
+    @apply xl:columns-3 gap-4
+    .post
+      @apply flex flex-col bg-white rounded-xl p-3 gap-4 mb-4 break-inside-avoid
+      .title,.description,.author
+        @apply capitalize
+      .title
+        @apply font-bold text-xl text-blue-600
+      .author
+        @apply opacity-50 font-medium
+</style>
