@@ -18,7 +18,6 @@
   </div>
 </template>
 
-
 <script lang="ts" setup>
 import { ref, onMounted, computed } from 'vue';
 import { GetUsers, GetPosts } from "./server/responsesAPI";
@@ -81,7 +80,7 @@ onMounted(async () => {
       &-icon
         @apply p-2
   .posts
-    @apply xl:columns-3 gap-4
+    @apply xl:columns-3 md:columns-2 sm:columns-1 gap-4
     .post
       @apply flex flex-col bg-white rounded-xl p-3 gap-4 mb-4 break-inside-avoid
       .title,.description,.author
